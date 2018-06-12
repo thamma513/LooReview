@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt')
 
 var UserSchema = new mongoose.Schema({
     userame: {
@@ -24,9 +25,19 @@ var UserSchema = new mongoose.Schema({
         type: String,
         required: 'Gender is required'
     },
-    reviews: {
-        
+    created: {
+        type: Date,
+        default: Date.now()
     }
-})
+});
+
+UserSchema.methods.generateHash = function(password){
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+UserSchema.methods.validPassword = function(password){
+    return bcrypt.compareSync(password, this.password);
+};
+
+
 
 module.export = UserScema
