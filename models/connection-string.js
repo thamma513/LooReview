@@ -3,11 +3,10 @@
 // or   var uri = 'mongodb://andy:corn@localhost:27017/cli';
 // or   var uri = config.get('mongo');
 // or   var uri = process.env.MONGO_URL
-var MongoClient = require('mongodb').MongoClient;
 
 var url = require('url')
 
-var uri = 'mongodb+srv://groupProjectAdmin:UdDen123@cluster0-z5hkx.mongodb.net/test?retryWrites=true';
+var uri = '';
 if (!uri) {
   throw new Error(
     '\033[31mYou need to provide the connection string. ' +
