@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/TylerZonies/LooReview#readme",
   "dependencies": {
+    "express": "^4.16.3",
     "mongodb": "^3.0.10",
-    "mongodb-core": "^3.0.9"
+    "mongodb-core": "^3.0.9",
+    "mongoose": "^5.1.5"
   }
 }
