@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/TylerZonies/LooReview#readme",
   "dependencies": {
+<<<<<<< HEAD
     "bcrypt": "^2.0.1",
     "body-parser": "^1.18.3",
     "dot-env": "0.0.1",
+=======
+>>>>>>> fd17c807caad3346de9328f180587ca52a11bd2d
     "express": "^4.16.3",
     "mongoose": "^5.1.5"
   }
