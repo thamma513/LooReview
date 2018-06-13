@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Modal} from 'react-materialize';
-import SignUpForm from '../Tyler-test/SignUpForm';
+import SignUpForm from '../Forms/SignUpForm';
 
 
 class ModalLoo extends Component {

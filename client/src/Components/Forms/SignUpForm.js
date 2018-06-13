@@ -44,10 +44,9 @@ class SignUpForm extends Component {
             password: signUpPassword,
             gender: signUpGender,
           }),
-        }).then(res => res.json())
-          .then(json => {
-            console.log('json', json);
-            if (json.success) {
+        }).then(res => {
+            console.log('Response:', res);
+            if (res.success) {
               this.setState({
                 signUpUsername: '',
                 signUpEmail: '',
@@ -56,7 +55,7 @@ class SignUpForm extends Component {
               });
             } else {
               this.setState({
-                signUpError: json.message,
+                signUpError: res.message,
                 isLoading: false,
               });
             }
