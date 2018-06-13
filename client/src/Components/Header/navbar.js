@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Navbar, NavItem, Button, SideNav, SideNavItem} from 'react-materialize';
+import {Navbar, NavItem, Button, SideNav, SideNavItem, Icon} from 'react-materialize';
 // import PropTypes from 'prop-types';
 import './navbar.css';
 
@@ -11,7 +11,7 @@ class Navibar extends Component {
         return(
             <div className='navBar'>
                 <Navbar brand='LooReview' right>
-                    <NavItem onClick={() => console.log('test click')}>Getting started</NavItem>
+                    <NavItem onClick={() => console.log('test click')}><Icon>search</Icon></NavItem>
                     <NavItem>Sign Up</NavItem>
                     <NavItem style={{ marginTop: '5%' }}>
                     <SideNav
