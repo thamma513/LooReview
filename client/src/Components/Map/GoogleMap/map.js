@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
-import key from '../../../../../keys'
+import key from '../../../keys';
 
 export class MapContainer extends Component {
     state = {
