@@ -28,6 +28,14 @@ var UserSchema = new mongoose.Schema({
     created: {
         type: Date,
         default: Date.now()
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false,
+    },
+    isModerator: {
+        type: Boolean,
+        default: false
     }
 });
 
