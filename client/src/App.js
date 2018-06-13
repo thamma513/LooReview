@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 import './App.css';
 import Navibar from './Components/Header/navbar';
 // import PropTypes from 'prop-types'; 
-import SignUpForm from './Components/Tyler-test/SignUpForm';
-import _Modal from './Components/Modal/modal';
+import ModalLoo from './Components/Modal/modal';
+import Footer from './Components/Footer/FooterLink/footer';
 
 class App extends Component {
   render() {
     return (
-      <div className="app">
+      <div className="page">
         <Navibar />
-        <SignUpForm />
-        <_Modal />
+        <ModalLoo />
+        <Footer />
       </div>
     );
   }

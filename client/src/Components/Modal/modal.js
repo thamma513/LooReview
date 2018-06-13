@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {Modal} from 'react-materialize';
+import SignUpForm from '../Tyler-test/SignUpForm';
 
 
-class _Modal extends Component {
+class ModalLoo extends Component {
 
     render(){
 
@@ -12,8 +13,8 @@ class _Modal extends Component {
                 <Modal
                     open
                     id='foo'
-                    header='Modal Header'>
-                    Lorem ipsum dolor sit amet
+                    header='LooReview'>
+                    <SignUpForm />
                 </Modal>
             </div>
 
@@ -22,4 +23,4 @@ class _Modal extends Component {
 }
 
 
-export default _Modal;
+export default ModalLoo;

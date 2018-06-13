@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Navbar, NavItem, Icon, Button, SideNav, SideNavItem} from 'react-materialize';
+import {Navbar, NavItem, Button, SideNav, SideNavItem} from 'react-materialize';
 // import PropTypes from 'prop-types';
 import './navbar.css';
 

@@ -114,7 +114,7 @@ class SignUpForm extends Component {
                 <br/>
                 <Row>
                     <Col offset="s3" s={6}>
-                    <h3>Tyler's Test Form</h3>
+                    <h3>Create an account</h3>
                         <Input type="text" ref="username" label="Username" value={signUpUsername} onChange={this.onTextboxChangeSignUpUsername} s={12} />
                         <Input type="email" ref="email" label="Email" value={signUpEmail} onChange={this.onTextboxChangeSignUpEmail} s={12} />
                         <Input type="password" ref="password" label="Password" value={signUpPassword} onChange={this.onTextboxChangeSignUpPassword} s={12} />
