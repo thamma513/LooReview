@@ -20,7 +20,7 @@ class App extends Component {
         <Row>
           <Col className="looInfo" s={6}>
             <div>
-              Infoffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+              Info
             </div>
           </Col>
           <Col  className="looMap" s={6}>
