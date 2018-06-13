@@ -31,9 +31,7 @@ class Navibar extends Component {
                     </SideNav>
                     </NavItem>
                 </Navbar>
-            
             </div>
-
 
         );
     }
