@@ -4,7 +4,8 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 export class MapContainer extends Component {
     state = {
         selectedPlace: {
-            name: "Denver, CO"
+            name: "Denver, CO",
+            // name: "Broomfield, CO"
         }
     }
 
@@ -20,7 +21,8 @@ export class MapContainer extends Component {
                 initialCenter={{
                     lat: 39.7392,
                     lng: -104.9903
-                }}>
+                }}
+                >
 
                 <Marker onClick={this.onMarkerClick}
                     name={'Current location'} />
@@ -36,5 +38,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: "YOUR-API-KEY-GOES-HERE"
+    apiKey: "AIzaSyAi9Qo2mlKhG3Lu40ymnJjObFmK3duDdIY"
 })(MapContainer);
