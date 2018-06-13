@@ -2,13 +2,13 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt')
 
 var UserSchema = new mongoose.Schema({
-    userame: {
+    username: {
         type: String,
         required: 'Username is required',
     },
     email: {
         type: String,
-        unique: true,
+        // unique: true,
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
     password: {
@@ -46,4 +46,4 @@ UserSchema.methods.validPassword = function(password){
     return bcrypt.compareSync(password, this.password);
 };
 
-module.export = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);

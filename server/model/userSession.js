@@ -23,4 +23,4 @@ var UserSessionSchema = new mongoose.Schema({
     }
 });
 
-module.export = mongoose.model('UserSession', UserSessionSchema);
+module.exports = mongoose.model('UserSession', UserSessionSchema);
