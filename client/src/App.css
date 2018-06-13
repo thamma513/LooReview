@@ -29,11 +29,23 @@
 
 footer{
   position: fixed;
-  height:10%;
+  height:8%;
   left: 0;
   bottom: 0;
   width: 100%;
+  z-index: 1;
   
 }
+
+.looInfo{
+  width: 50%;
+  height: 50%;
+  bottom: 0%;
+}
+
+/* map{
+  height:50%;
+  width: 50%;
+} */
 
 
