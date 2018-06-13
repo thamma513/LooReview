@@ -11,15 +11,16 @@ module.exports = function(app){
             range
         } = query;
 
-        let queryString = 'http://maps.googleapis.com/maps/api/geocode/json?key=' + key.GOOGLE;
+        let queryString = 'https://maps.googleapis.com/maps/api/geocode/json?key=' + key.GOOGLE;
 
         if(input){
-            queryString += "&"
+            queryString += "&address=" + input;
         }
 
-        queryString += 
 
-        request.get()
+        request.get(queryString).on('response', (res) => {
+            console.log(res);
+        });
 
         
     })
