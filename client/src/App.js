@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Header/navbar';
+import Footer from './Components/Footer/FooterLink/footer';
 
 class App extends Component {
   render() {
@@ -15,7 +16,14 @@ class App extends Component {
       //     To get started, edit <code>src/App.js</code> and save to reload.
       //   </p>
       // </div>
+      <div className='turd'>
+    <div>  
     <Navbar />
+    </div>
+    <div>
+       <Footer />
+    </div>   
+    </div>
     );
   }
 }
