@@ -1,13 +1,5 @@
 const mongoose = require('mongoose');
 
-<<<<<<< HEAD
-var Schema = mongoose.Schema;
-
- const ToiletSchema = new Schema({
-    poi: {
-        type: String,
-        trim: true
-=======
 let ToiletSchema = new mongoose.Schema({
     geoData: {
         location: {
@@ -21,7 +13,6 @@ let ToiletSchema = new mongoose.Schema({
         name: {
             type: String
         }
->>>>>>> ca1da99760e6c32d702a375d4a47337b437d4072
     },
     placeId: {
         type: String,

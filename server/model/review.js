@@ -1,31 +1,8 @@
 var mongoose = require('mongoose');
 
-<<<<<<< HEAD
-var Schema = mongoose.Schema;
-
-var ReviewSchema = new Schema({
-    
-        cleanliness: {
-            type: Number,
-            unique: true,
-            required: true
-        },
-        toiletPQ: {
-            type: Number,
-            unique: true,
-            required: true
-        },
-        accesability: {
-        type: Number,
-        unique: true,
-        required: true
-    },
-    hasChang: {
-=======
 var ReviewSchema = new mongoose.Schema({
     comment: String,
     isAccessable: {
->>>>>>> ca1da99760e6c32d702a375d4a47337b437d4072
         type: Boolean,
         default: false
     },
@@ -78,11 +55,4 @@ var ReviewSchema = new mongoose.Schema({
     }
 });
 
-<<<<<<< HEAD
-
-var Review = mongoose.model('Review', ReviewSchema);
-
-module.exports = Review;
-=======
 module.exports = mongoose.model('Review', ReviewSchema);
->>>>>>> ca1da99760e6c32d702a375d4a47337b437d4072
