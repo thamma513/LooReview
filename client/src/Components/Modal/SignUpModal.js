@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import {Modal} from 'react-materialize';
+import {Modal, NavItem} from 'react-materialize';
 import SignUpForm from '../Forms/SignUpForm';
 
-
-class ModalLoo extends Component {
+class SignUpModal extends Component {
 
     render(){
 
         return(
 
-            <div className='modal'>
+            <div className='modalLoo'>
                 <Modal
-                    open
-                    id='foo'
-                    header='LooReview'>
+                    trigger={<NavItem>Sign Up</NavItem>}>
                     <SignUpForm />
                 </Modal>
             </div>
@@ -23,4 +20,4 @@ class ModalLoo extends Component {
 }
 
 
-export default ModalLoo;
+export default SignUpModal;
