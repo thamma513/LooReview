@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import HomeSearch from '../SearchBar/homeSearch';
-import {Row, Col, Preloader} from 'react-materialize';
+import { Row } from 'react-materialize';
 
 
 class HomePage extends Component {
