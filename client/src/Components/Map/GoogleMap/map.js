@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import key from '../../../keys';
+import MapArray from '../../Maploop/array';
 
 export class MapContainer extends Component {
     state = {
@@ -23,16 +24,16 @@ export class MapContainer extends Component {
                     lat: 39.7392,
                     lng: -104.9903
                 }}>
-                
+                {/* <MapArray/> */}
                 <Marker onClick={this.onMarkerClick}
                     name={'Current location'} />
 
-                <InfoWindow onClose={this.onInfoWindowClose}>
-                    <div>
-                        <h1>{this.state.selectedPlace.name}</h1>
-                    </div>
-                </InfoWindow>
-            </Map>
+            <InfoWindow onClose={this.onInfoWindowClose}>
+                <div>
+                    <h1>{this.state.selectedPlace.name}</h1>
+                </div>
+            </InfoWindow>
+        </Map>
         );
     }
 }
