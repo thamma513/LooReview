@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Col} from 'react-materialize';
+import {Card, Row, Col} from 'react-materialize';
 // import logo from './logo.svg';
 import './App.css';
 import Navibar from './Components/Header/navbar';
@@ -20,7 +20,10 @@ class App extends Component {
         <Row>
           <Col className="looInfo" s={6}>
             <div>
-              Info
+            <Col m={6} s={12}>
+            <Card className='blue-grey darken-1' textClassName='white-text' title='Card title'>
+            </Card>
+            </Col>
             </div>
           </Col>
           <Col  className="looMap" s={6}>
