@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
- const ReviewSchema = new Schema({
+ const ToiletSchema = new Schema({
     poi: {
         type: String,
         trim: true
@@ -27,9 +27,6 @@ var Schema = mongoose.Schema;
     timestamps: true
 });
 
-var Review = mongoose.model('Review', ReviewSchema);
+var Toilet = mongoose.model('Toilet', ToiletSchema);
 
-module.exports = Review;
-var ReviewSchema = new mongoose.Schema({
-    
-})
+module.exports = Toilet;

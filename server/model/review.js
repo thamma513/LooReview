@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var RatingSchema = new Schema({
+var ReviewSchema = new Schema({
     
         cleanliness: {
             type: Number,
@@ -57,6 +57,6 @@ var RatingSchema = new Schema({
 });
 
 
-var Rating = mongoose.model('Rating', RatingSchema);
+var Review = mongoose.model('Review', ReviewSchema);
 
-module.exports = Rating;
+module.exports = Review;
