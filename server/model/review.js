@@ -21,6 +21,10 @@ var ReviewSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    hasGloryhole: {
+        type: Boolean,
+        default: false
+    },
     styleRate: {
         type: Number,
         min: 0,
@@ -41,7 +45,7 @@ var ReviewSchema = new mongoose.Schema({
             type: String
         },
         userId: {
-            type: String
+            type: mongoose.Schema.Types.ObjectId
         }
     },
     created: {
