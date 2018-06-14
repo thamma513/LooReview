@@ -52,7 +52,7 @@ class CollapsibleSearchBar extends Component {
                         <Collapsible>
                             <CollapsibleItem icon='place' header='Search by location'>
                                 <Input type="text" ref="location" placeholder="Enter a Location or Point of Interest" value={searchTerms} onChange={this.onTextboxChangeSearch} s={12} />
-                                <Button type="submit" waves="purple" onClick={this.searchLoos} >Search</Button>
+                                <Button style={{  background: '#80deea' }} type="submit" waves="purple" onClick={this.searchLoos} >Search</Button>
                             </CollapsibleItem>
                         </Collapsible>
                     </Col>
