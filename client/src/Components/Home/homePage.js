@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import HomeSearch from '../SearchBar/homeSearch';
+import {Row, Col, Preloader} from 'react-materialize';
 
 
 class HomePage extends Component {
@@ -9,4 +10,15 @@ class HomePage extends Component {
 
         }
     }
+
+    render(){
+
+        return(
+            <Row>
+                <HomeSearch />
+            </Row>
+        )
+    }
 }
+
+export default HomePage

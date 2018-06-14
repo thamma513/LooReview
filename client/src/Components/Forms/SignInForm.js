@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Row, Col, Input, Button, Toast} from 'react-materialize';
 import 'whatwg-fetch';
+import { setInStorage, getFromStorage, removeFromStorage } from '../../utils/storage';
 // import PropTypes from 'prop-types';
 
 

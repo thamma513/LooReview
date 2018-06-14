@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Navbar, NavItem, Button, SideNav, SideNavItem, Icon} from 'react-materialize';
-import { getFromStorage, setInStorage, removeFromStorage } from './utils/storage';
+import { getFromStorage, setInStorage, removeFromStorage } from '../../utils/storage';
 import SignUpModal from '../Modal/SignUpModal';
 import SignInModal from '../Modal/SignInModal';
 import './navbar.css';
@@ -17,7 +17,8 @@ class Navibar extends Component {
             isLoggedIn: this.props.isLoggedIn
         }
 
-        this.onLogOut = this.onLogOut.bind(this)
+        this.onLogOut = this.onLogOut.bind(this);
+        this.buttonSelect = this.buttonSelect.bind(this);
     }
 
     onLogOut(){
@@ -56,6 +57,24 @@ class Navibar extends Component {
         this.setState({ currentPage: page });
       };
 
+    buttonSelect = function(){
+        console.log('here');
+        if(this.props.loggedIn){ 
+            return(
+                <NavItem onClick={this.onLogOut}>
+                    <p>Log Out</p>
+                </NavItem>
+            )
+                                         
+        } else {
+        return[
+           <NavItem key="A"><SignUpModal /></NavItem>,
+           <NavItem key="B"><SignInModal /></NavItem>
+        ]
+        
+        }
+    }
+
     render(){
         const {
             isLoggedIn
@@ -64,19 +83,15 @@ class Navibar extends Component {
             <div className='navBar'>
                 <Navbar style={{  background: '#80deea' }} brand='LooReview' right>
                 {/* ask sarah about this shit its garbage */}
-                    {
-                        (isLoggedIn) ? (
-                            <NavItem onClick={this.onLogOut}>Log Out</NavItem>                                
-                        ) : (
-                        <NavItem>
-                            <SignUpModal />
-                        </NavItem>
-                        <NavItem>
-                            <SignInModal />
-                        </NavItem>                        
-                        )
-                    }
-                        <NavItem>
+                    {this.buttonSelect()}
+                    {/* <NavItem>
+                        <SignUpModal />
+                    </NavItem>
+                    <NavItem>
+                        <SignInModal />
+                    </NavItem> */}
+                    
+                    <NavItem>
                         <SideNav
                             trigger={<Button style={{ height: '64px' }} className="sideNavButton"><Icon>menu</Icon></Button>}
                             options={{ closeOnClick: true }}>

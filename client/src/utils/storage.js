@@ -33,7 +33,7 @@ export function removeFromStorage(key){
     try {
         localStorage.removeItem(key);
         return true;
-    } catch {
+    } catch (e) {
         return false;
     }
 }

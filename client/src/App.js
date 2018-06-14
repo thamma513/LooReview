@@ -24,7 +24,7 @@ class App extends Component {
   
   componentWillMount() {
     const session = getFromStorage('user_session')
-    if(session.token){
+    if(session && session.token){
       fetch('/account/verify?token=' + session.token, {
         method: 'GET',
         headers: {
@@ -48,7 +48,7 @@ class App extends Component {
       <div className="page clearfix">
         <Navibar loggedIn={this.isLoggedIn}/>
           <HomePage />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }
