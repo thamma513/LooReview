@@ -6,6 +6,7 @@ import './App.css';
 import Navibar from './Components/Header/navbar';
 import HomePage from './Components/Home/homePage'
 // import MapG from './Components/Map/GoogleMap/map';
+import MapPage from './Components/Map/mapPage';
 // import CollapsibleSearchBar from './Components/Collapsible/SearchBar';
 
 
@@ -47,7 +48,8 @@ class App extends Component {
     return (
       <div className="page clearfix">
         <Navibar loggedIn={this.isLoggedIn}/>
-          <HomePage />
+        <MapPage/>
+          {/* <HomePage /> */}
         {/* <Footer /> */}
       </div>
     );

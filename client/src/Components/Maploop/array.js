@@ -8,13 +8,10 @@ import { Marker } from 'google-maps-react';
 
     //         markers: []
     //     }
-    
- 
   
-
     render(){
         const MarkerPins = this.props.markers.map(location => {
-            console.log(location);
+            // console.log(location);
             
             return (
                 <Marker
