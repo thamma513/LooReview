@@ -6,7 +6,7 @@ import Navibar from './Components/Header/navbar';
 import Footer from './Components/Footer/FooterLink/footer';
 import MapG from './Components/Map/GoogleMap/map';
 import CollapsibleSearchBar from './Components/Collapsible/SearchBar';
-
+import MapArray from './Components/Maploop/array';
 
 class App extends Component {
   render() {
@@ -20,12 +20,14 @@ class App extends Component {
             <Col m={6} s={12}>
             <Card className='blue-grey darken-1' textClassName='white-text' title='Card title'>
             </Card>
+            <MapArray/>
             </Col>
             </div>
           </Col>
           <Col  className="looMap" s={8}>
             <div className="googleMap">
               <MapG />
+          
             </div>
           </Col>
         </Row>
