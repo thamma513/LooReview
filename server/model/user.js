@@ -1,17 +1,14 @@
-var mongoose = require('mongoose'),
-    Schema = mongoose.Schema,
-    ObjectId = Schema.ObjectId;
-
-mongoose.connect('mongodb://localhost/LooReview');
+var mongoose = require('mongoose');
+var bcrypt = require('bcrypt')
 
 var UserSchema = new mongoose.Schema({
-    userame: {
+    username: {
         type: String,
         required: 'Username is required',
     },
     email: {
         type: String,
-        unique: true,
+        // unique: true,
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
     password: {
@@ -28,9 +25,25 @@ var UserSchema = new mongoose.Schema({
         type: String,
         required: 'Gender is required'
     },
-    reviews: {
-        
+    created: {
+        type: Date,
+        default: Date.now()
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false,
+    },
+    isModerator: {
+        type: Boolean,
+        default: false
     }
-})
+});
 
-module.export = UserScema
+UserSchema.methods.generateHash = function(password){
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+UserSchema.methods.validPassword = function(password){
+    return bcrypt.compareSync(password, this.password);
+};
+
+module.exports = mongoose.model('User', UserSchema);
