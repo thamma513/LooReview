@@ -1,3 +1,7 @@
+var dotenv = require('dotenv')
+dotenv()._loadEnv()
+
+
 var express = require('express');
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose');
@@ -21,7 +25,11 @@ app.use(bodyParser.json());
 // routes
 require('./server/routs')(app);
 
-
+app.use(express.static(path.resolve(__dirname, '../dist')));
+app.get('*', function (req, res) {
+  res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+  res.end();
+});
 app.listen(port, (e) => {
     if(e) throw e;
     console.log('server listening on port:' + port);

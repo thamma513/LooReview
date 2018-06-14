@@ -11,6 +11,8 @@ module.exports = function(app){
             range
         } = query;
 
+
+        console.log(key);
         let queryString = 'https://maps.googleapis.com/maps/api/geocode/json?key=' + key.GOOGLE;
 
         if(input){
@@ -18,8 +20,23 @@ module.exports = function(app){
         }
 
 
-        request.get(queryString).on('response', (res) => {
-            console.log(res);
+        request.get(queryString, (e, response, body) => {
+            if(e) throw e;
+
+            if(response.statusCode == 200){
+                const { 
+                    geometry,
+                    formatted_address
+                } = JSON.parse(body).results[0];
+                const { location } = geometry;
+
+                console.log(location);
+                console.log(formatted_address);
+                queryString = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=' + key.GOOGLE + '&input=' + location + '&rankby=distance&type=restaurant';
+
+                request.get(queryString, ())
+                
+            } 
         });
 
         
