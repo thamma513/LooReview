@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Navbar, NavItem, Button, SideNav, SideNavItem, Icon} from 'react-materialize';
-import { getFromStorage, setInStorage, removeFromStorage } from '../../utils/storage';
+import { getFromStorage, removeFromStorage } from '../../utils/storage';
 import SignUpModal from '../Modal/SignUpModal';
 import SignInModal from '../Modal/SignInModal';
 import './navbar.css';
@@ -76,9 +76,7 @@ class Navibar extends Component {
     }
 
     render(){
-        const {
-            isLoggedIn
-        } = this.state
+
         return(
             <div className='navBar'>
                 <Navbar style={{  background: '#80deea' }} brand='LooReview' right>

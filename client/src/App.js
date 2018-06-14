@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import {Row, Col, Preloader} from 'react-materialize';
+import 'react-materialize';
 // import logo from './logo.svg';
-import { getFromStorage, setInStorage } from './utils/storage';
+import { getFromStorage } from './utils/storage';
 import './App.css';
 import Navibar from './Components/Header/navbar';
-import Footer from './Components/Footer/FooterLink/footer';
 import HomePage from './Components/Home/homePage'
 // import MapG from './Components/Map/GoogleMap/map';
 // import CollapsibleSearchBar from './Components/Collapsible/SearchBar';
 
 
 class App extends Component {
+  
   constructor(){
     super();
     this.state = {
