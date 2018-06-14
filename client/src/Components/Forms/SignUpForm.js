@@ -26,10 +26,6 @@ class SignUpForm extends Component {
     onSignUp() {
         // Grab state
         const {signUpUsername, signUpEmail, signUpPassword, signUpGender} = this.state;
-    
-        this.setState({
-          isLoading: true,
-        });
         
         console.log(signUpUsername, signUpEmail, signUpPassword, signUpGender);
         // Post request to backend
@@ -56,7 +52,6 @@ class SignUpForm extends Component {
             } else {
               this.setState({
                 signUpError: res.message,
-                isLoading: false,
               });
             }
           });
@@ -95,19 +90,8 @@ class SignUpForm extends Component {
             signUpGender,
           } = this.state;
       
-        //add this loader to a seperate component folder
-        // if (isLoading) {
-        //     return (
-        //         <Row>
-        //             <Col s={4}>
-        //                 <Preloader size='big' flashing/>
-        //             </Col>
-        //         </Row>
-        //     );
-        // }
-
         return(
-            <div className="login-form" >
+            <div className="account-creation-form" >
                 <br/>
                 <br/>
                 <br/>
@@ -123,17 +107,12 @@ class SignUpForm extends Component {
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
                         </Input>
-                        <Button type="submit" waves="purple" onClick={this.onSignUp} >Do a thing</Button>
+                        <Button type="submit" waves="purple" onClick={this.onSignUp} >Create Account</Button>
                     </Col>
                 </Row>
             </div>
         );
     }
 }
-
-//prop-types example
-// SignUpForm.propTypes = {
-//     optionalArray: PropTypes.arrays
-// }
 
 export default SignUpForm;

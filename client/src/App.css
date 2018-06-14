@@ -27,6 +27,14 @@
   to { transform: rotate(360deg); }
 } */
 
+body{
+  height: 100%;
+}
+
+.page{
+  height: 100%;
+}
+
 footer{
   position: fixed;
   height:8%;
@@ -34,13 +42,16 @@ footer{
   bottom: 0;
   width: 100%;
   z-index: 1;
-  
 }
 
 .looInfo{
   width: 50%;
   height: 50%;
   bottom: 0%;
+}
+
+.looMap{
+  height: 100%;
 }
 
 /* map{
