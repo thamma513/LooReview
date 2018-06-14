@@ -1,18 +1,55 @@
 import React, { Component } from 'react';
 import {Navbar, NavItem, Button, SideNav, SideNavItem, Icon} from 'react-materialize';
+import { getFromStorage, setInStorage, removeFromStorage } from './utils/storage';
 import SignUpModal from '../Modal/SignUpModal';
 import SignInModal from '../Modal/SignInModal';
 import './navbar.css';
 import logo from './img/golden-toilet.jpg';
+import 'whatwg-fetch';
 
 
 class Navibar extends Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            currentPage: "SignUp"
+            currentPage: "Home",
+            isLoggedIn: this.props.isLoggedIn
         }
+
+        this.onLogOut = this.onLogOut.bind(this)
+    }
+
+    onLogOut(){
+        const session = getFromStorage('user_session')
+
+        fetch('/account/verify?token=' + session.token, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }).then(res => {
+              if(res.success){
+                fetch('/account/logout?token=' + res.token, {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+                }).then((response) => {
+                    if(response.success){
+                        removeFromStorage('user_session');
+                        this.setState({
+                            isLoggedIn:false
+                        });
+                        console.log(response.message)
+                    } else {
+                        console.log(response.message)
+                    }
+                })
+              } else {
+                console.log(res.message);
+              }
+            })
     }
 
     handlePageChange = page => {
@@ -20,17 +57,26 @@ class Navibar extends Component {
       };
 
     render(){
-
+        const {
+            isLoggedIn
+        } = this.state
         return(
             <div className='navBar'>
                 <Navbar style={{  background: '#80deea' }} brand='LooReview' right>
-                    <NavItem>
-                        <SignUpModal/>
-                    </NavItem>
-                    <NavItem>
-                        <SignInModal/>
-                    </NavItem>
-                    <NavItem>
+                {/* ask sarah about this shit its garbage */}
+                    {
+                        (isLoggedIn) ? (
+                            <NavItem onClick={this.onLogOut}>Log Out</NavItem>                                
+                        ) : (
+                        <NavItem>
+                            <SignUpModal />
+                        </NavItem>
+                        <NavItem>
+                            <SignInModal />
+                        </NavItem>                        
+                        )
+                    }
+                        <NavItem>
                         <SideNav
                             trigger={<Button style={{ height: '64px' }} className="sideNavButton"><Icon>menu</Icon></Button>}
                             options={{ closeOnClick: true }}>
