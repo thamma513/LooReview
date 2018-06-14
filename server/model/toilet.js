@@ -34,4 +34,6 @@ let ToiletSchema = new mongoose.Schema({
         max: 5
     },
     reviews: [ReviewSchema]
-})
+});
+
+module.exports = mongoose.model('Toilet', ToiletSchema);
