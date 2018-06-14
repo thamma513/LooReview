@@ -3,9 +3,10 @@ dotenv()._loadEnv()
 
 var path = require('path');
 var express = require('express');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var db = require('./config/connection.js')
+var db = require('./config/connection.js');
+
 
 
 mongoose.connect(db.db_dev).catch((reason) => {
@@ -16,7 +17,7 @@ mongoose.connect(db.db_dev).catch((reason) => {
 
 console.log(db.db_dev);
 
-var port = process.env.PORT || 6969;
+var port = process.env.PORT || 3000;
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
