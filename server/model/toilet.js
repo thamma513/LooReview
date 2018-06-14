@@ -1,24 +1,43 @@
-var mongoose = require('mongoose');
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
+<<<<<<< HEAD
 var Schema = mongoose.Schema;
 
  const ToiletSchema = new Schema({
     poi: {
         type: String,
         trim: true
+=======
+let ToiletSchema = new mongoose.Schema({
+    geoData: {
+        location: {
+            lat: {
+                type: Number
+            },
+            lng: {
+                type: Number
+            }
+        },
+        name: {
+            type: String
+        }
+>>>>>>> ca1da99760e6c32d702a375d4a47337b437d4072
     },
-    city: {
+    placeId: {
         type: String,
-        trim: true
+        required: true
     },
-    state: {
-        type: String,
-        trim: true
+    averageScore: {
+        type: Number,
+        min: 0,
+        max: 5
     },
-    _creator: {
-        type: Schema.Types.ObjectId, ref: 'User'
+    averageCleanScore: {
+        type: Number,
+        min: 0,
+        max: 5
     },
+<<<<<<< HEAD
     _rating: [{
         type: Schema.Types.ObjectId,
         ref: 'Rating'
@@ -30,3 +49,12 @@ var Schema = mongoose.Schema;
 var Toilet = mongoose.model('Toilet', ToiletSchema);
 
 module.exports = Toilet;
+=======
+    averageStyleScore: {
+        type: Number,
+        min: 0,
+        max: 5
+    },
+    reviews: [ReviewSchema]
+})
+>>>>>>> ca1da99760e6c32d702a375d4a47337b437d4072
