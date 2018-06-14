@@ -8,7 +8,6 @@ class SignUpForm extends Component {
     constructor(){
         super();
         this.state = {
-            isLoading: true,
             signUpUsername: '',
             signUpEmail: '',
             signUpPassword: '',

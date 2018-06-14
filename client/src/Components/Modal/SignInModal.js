@@ -11,7 +11,7 @@ class SignInModal extends Component {
 
             <div className='modalLoo'>
                 <Modal
-                    trigger={<NavItem>Sign In</NavItem>}>
+                    trigger={<NavItem>Login</NavItem>}>
                     <SignInForm />
                 </Modal>
             </div>
