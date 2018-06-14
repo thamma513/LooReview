@@ -19,8 +19,9 @@ class App extends Component {
             <div>
             <Col m={6} s={12}>
             <Card className='blue-grey darken-1' textClassName='white-text' title='Card title'>
-            </Card>
             <MapArray/>
+            </Card>
+            
             </Col>
             </div>
           </Col>
